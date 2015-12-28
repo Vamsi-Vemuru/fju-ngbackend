@@ -1,0 +1,29 @@
+{
+	"heading" : "Master of Science in Software Development",
+	"description": "The Master of Science in Software Development program is designed to provide an immersive learn by doing experience for students who aspire to take up roles in fast-paced software companies and tech startups. The curriculum begins with an introduction to programming, object oriented programming and databases as the foundation courses. Students then prepared to develop software for the Internet and Android devices. In addition students apply their skills and professional software development practices on real customer projects to attain a mastery in the field.",
+	"fieldsList": [
+		{
+			"heading": "Course Requirements",
+			"description": "blah blah",
+			"list": [
+				"Foundation Courses",
+				"Breadth Courses",
+				"Specializations"
+			]
+		},
+		{
+			"heading": "Prerequisites",
+			"description": "blah blah",
+			"list": [
+				"Criteria 1",
+				"Criteria 2",
+				"Criteria 3"
+			]
+		},
+		{
+			"heading": "Tuition",
+			"description": "blah blah",
+			"list": []
+		}
+	]
+}

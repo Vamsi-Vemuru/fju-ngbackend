@@ -1,0 +1,55 @@
+.fjucardtabs md-content {
+  background-color: transparent !important;
+}
+
+.fjucardtabs md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1;
+}
+
+.fjucardtabs md-content md-tabs md-tabs-wrapper {
+  background: white;
+}
+
+.fjucardtabs md-content h1:first-child {
+    margin-top: 0;
+}
+
+#header {
+  color:white; 
+  font-family: 'Italianno', cursive;
+  margin-top:2px;
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+#logo {
+  border-radius: 50%;
+  max-width: 100%;
+  width: 54%;
+}
+
+md-checkbox.green {
+  margin-top: 0px;
+  margin-bottom: 13px;
+}
+
+.mssdcard {
+  margin-left: 3%;
+}
+
+.fjucard {
+  margin-right: 6%;
+}
+
+#info {
+  margin-top: 3%;
+}
+
+.md-input.ng-dirty.ng-invalid {
+  border-color: #FA787E;
+}
+
+.md-input.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
