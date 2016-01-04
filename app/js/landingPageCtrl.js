@@ -3,11 +3,26 @@
 var landingPageController = angular.module('landingPageController',[])
 
 
-landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeout', 'landingPageService', function($http, $scope, $timeout, landingPageService) {
+landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeout', 'loadJsonService', '$mdDialog',
+  function($http, $scope, $timeout, loadJsonService, $mdDialog) {
   $scope.user = {};
-  landingPageService.query(function(data) {
+
+  $scope.showDialogue = function(ev, ind) {
+    var templ = 'dialog'+ind+'.tmpl.html';
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: templ,
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+  };
+
+  loadJsonService.get({jsonName:'landingpage'}, function(data) {
       $scope.degreeTitle = data.heading;
       $scope.degreeDesc = data.description;
+      $scope.list = data.list;
+      $scope.end = data.end
       $scope.courseReq = data.fieldsList[0];
       $scope.preReq= data.fieldsList[1];
       $scope.tution = data.fieldsList[2];
@@ -31,7 +46,17 @@ landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeou
       }, 3000);
     })
   };
-  
 }]);
+
+function DialogController($scope, $mdDialog) {
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+}
+
 
 

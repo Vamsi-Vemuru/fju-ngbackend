@@ -1,0 +1,23 @@
+{
+  "heading":"FJU’s unique approach to learning",
+  "description":"FJU’s approach to learning is more effective than traditional method of listening to lectures. Our course is designed to provide skills and learning experiences that can be directly carried over to your work life",
+  "list" : [
+    {
+      "title":"Individual attention",
+      "description":["Individual attention is given to the students. Each student is entrusted to an advisor/counselor at the time of admission. The advisor, along with the student, will work out a study plan based on the student’s learning needs and flexibility."]
+    },
+    {
+      "title":"Learning by Doing Methodology",
+      "description":["A distance learning course does not have to be all theory and no hands-on. At FJU we are committed to giving a more realistic, experience centric education to help you meet all kinds of challenges at work place.",
+      "On contrary to the traditional passive learning method, learning by doing methodology is focused on allowing the students to involve actively in the learning experience. The students are encouraged to reflect, analyze and conceptualize their learning experience, thereby internalizing it. This approach not only teaches them technical skills but also allows them to practice and fine tune their problem solving and decision making skills. The most important result of Learning by Doing is that it makes the student Industry ready – ready to implement the concepts at work."]
+    },
+    {
+      "title":"Innovative Teaching Methodology",
+      "description":["Our innovative teaching methodology is to assign an expert coach for each student at the time of course registration. The coach handholds the students throughout the course. Students will be able to interact with their coach every day face to face or online. It gives the students an opportunity to clarify their concepts and seek help in areas required."]
+    },
+    {
+      "title":"FJU faculty members are focused on",
+      "description":["<ol><li>observing student’s work </li><li>reviewing student work assignments<li>providing actionable feedback</li><li>diagnosing problems blocking student progress</li><li>engaging students with questions to help them think through what they are experiencing in order to find a path forward</li><li>Providing real-world practice to help students develop needed skills and insights as they learn knowledge of enduring value.</li>"]
+    }
+  ]
+}

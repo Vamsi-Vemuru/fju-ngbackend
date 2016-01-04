@@ -1,6 +1,13 @@
 {
 	"heading" : "Master of Science in Software Development",
-	"description": "The Master of Science in Software Development program is designed to provide an immersive learn by doing experience for students who aspire to take up roles in fast-paced software companies and tech startups. The curriculum begins with an introduction to programming, object oriented programming and databases as the foundation courses. Students then prepared to develop software for the Internet and Android devices. In addition students apply their skills and professional software development practices on real customer projects to attain a mastery in the field.",
+	"description": "What is holding you back from getting a higher education degree?",
+	"list": [
+			"Are you a busy working professional?",
+			"Are you taking a break from work and hope to get back soon?",
+			"Are you a fresh graduate looking for job opportunities?", 
+			"Are you a college student looking to get a head start on your higher education?"
+			],
+	"end": "Are you worried about the expenses of full-time college education? Whatever your constraint is, FJU helps you realize your dream of gaining higher education degree under the guidance of some of the best faculty in the world. Check out our faculty profile page for more details.",
 	"fieldsList": [
 		{
 			"heading": "Course Requirements",

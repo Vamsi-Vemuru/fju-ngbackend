@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html ng-app='landingpage'>
 <head>
+  <meta charset="UTF-8">
+  <base href="/">
   <title>Franklin Jefferson University</title>
   <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
-  <link rel="stylesheet" href="css/animations.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/animations.css"> -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -17,8 +21,11 @@
 <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/landingPageCtrl.js"></script>
+<script type="text/javascript" src="js/getToKnowFjuCtrl.js"></script>
+<script type="text/javascript" src="js/learningAtFjuCtrl.js"></script>
 <script type="text/javascript" src="js/services.js"></script>
 <script type="text/javascript" src="js/directives.js"></script>
+<script type="text/javascript" src="js/filters.js"></script>
   <style type="text/css">
     /**
       * Hide when Angular is not yet loaded and initialized
@@ -29,21 +36,26 @@
   </style>
 </head>
 <body >
-  <div class="fjutoolbar">
+  <div class="fjutoolbar" ng-cloak>
     <md-content style="overflow: visible">
       <md-toolbar>
         <div class="md-toolbar-tools">
           <div flex="10" layout-align="right start">
             <img id="logo" src="img/fju-logo.png">
           </div>
+          <a href="/">
           <h2>
             <span id="header">Franklin Jefferson University</span>
           </h2>
+          </a>
           <span flex=""></span>
-          <md-button>
+          <md-button href="/">
+            Home
+          </md-button>
+          <md-button href="/gettoknowfju">
             Get to know FJU
           </md-button>
-          <md-button>
+          <md-button href="/learningatfju">
             Learning at FJU
           </md-button>
           <md-button>
@@ -53,7 +65,7 @@
       </md-toolbar>
     </md-content>
   </div>
-  <div ng-view class="view-frame"></div>
+  <div ng-view class="view-frame" ng-cloak></div>
 
 </body>
 </html>

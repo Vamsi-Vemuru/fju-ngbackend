@@ -1,118 +1,240 @@
-<div id="info" layout="row" layout-align="center start">
-    <div class="mssdcard" flex="65" layout-align="center">
-      <md-card>
+<div id="info" layout="row" layout-align="center start" ng-cloak>
+  <div class="mssdcard" flex="65" layout-align="center">
+    <md-card>
+      <md-content class="md-padding">
+        <span class="md-title">{[{ degreeTitle }]}</span>
+        <hr>
+        <span class="md-subhead">
+          <p>{[{ degreeDesc }]}</p>
+          <ul>
+            <li ng-repeat="type in list">{[{ type }]}<md-button class="md-primary md-raised" ng-click="showDialogue($event, $index)">
+            Info
+          </md-button></li>
+          </ul>
+          <p>{[{ end }]}</p>
+        </span>
+      </md-content>
+    </md-card>
+    
+    <div layout="row">
+      <md-card flex="33">
         <md-content class="md-padding">
-          <span class="md-title">{[{ degreeTitle }]}</span>
-          <span class="md-subhead">
-            <p align="left">{[{ degreeDesc }]}</p>
-          </span>
+          <span class="md-title">{[{ courseReq.heading }]}</span>
+          <hr>
+          <span class="md-subhead"><p>{[{ courseReq.description }]}</p></span>
+          <md-content>
+              <md-list>
+                <md-list-item class="md-1-line" ng-repeat="course in courseReq.list">
+                  <div class="md-list-item-text">
+                    <span class="md-subhead">
+                      <p>{[{ course }]}</p>
+                    </span>
+                  </div>
+                  <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+              </md-list> 
+            </md-content> 
+            <md-button class="md-raised">Course Catalog</md-button>
         </md-content>
       </md-card>
-      
-      <div layout="row">
-        <md-card flex="33">
-          <md-content class="md-padding">
-            <span class="md-title">{[{ courseReq.heading }]}</span>
-            <span class="md-subhead"><p>{[{ courseReq.description }]}</p></span>
-            <md-content>
-                <md-list>
-                  <md-list-item class="md-1-line" ng-repeat="course in courseReq.list">
-                    <div class="md-list-item-text">
-                      <span class="md-subhead">
-                        <p>{[{ course }]}</p>
-                      </span>
-                    </div>
-                    <md-divider ng-if="!$last"></md-divider>
-                  </md-list-item>
-                </md-list> 
-              </md-content> 
-              <md-button class="md-raised">Course Catalog</md-button>
-          </md-content>
-        </md-card>
-        <md-card flex="33">
-          <md-content class="md-padding">
-            <span class="md-title">{[{ preReq.heading }]}</span>
-            <span class="md-subhead"><p>{[{ preReq.description }]}</p></span>
-            <ul>
-              <li ng-repeat="criteria in preReq.list">{[{ criteria }]}</li>
-            </ul>
-          </md-content>
-        </md-card>
-        <md-card flex="33">
-          <md-content class="md-padding">
-            <span class="md-title">{[{ tution.heading }]}</span>
-            <span class="md-subhead"><p>{[{ tution.description }]}</p></span>
-            <ul>
-                <li ng-repeat="criteria in tution.list">{[{ criteria }]}</li>
-              </ul>
-          </md-content>
-        </md-card> 
-      </div>
-    </div>
-
-    <div class="fjucard" flex="35">
-      <md-card>
-        <div class="fjucardtabs">
-          <md-content>
-            <md-tabs md-dynamic-height="" md-border-bottom="">
-              <md-tab label="Register">
-                <md-content class="md-padding">
-                  <div layout="column" ng-cloak="" class="md-inline-form">
-                    <md-content layout-padding="">
-                      <div>
-                        <form method="POST" name="userForm" ng-submit="userForm.$valid && register()" novalidate>
-                          <md-input-container class="md-block" flex-gt-sm="">
-                            <label>First name</label>
-                            <input name="fname" ng-model="user.firstName" required>
-                            <div md-auto-hide="false" ng-messages="userForm.fname.$error" ng-if="userForm.$submitted || userForm.fname.$touched">
-                              <div id="req" ng-message="required">Required</div>
-                            </div>
-                          </md-input-container>
-
-                          <md-input-container class="md-block" flex-gt-sm="">
-                            <label>Last Name</label>
-                            <input name="lname" ng-model="user.lastName" required>
-                            <div md-auto-hide="false" ng-messages="userForm.lname.$error" ng-if="userForm.$submitted || userForm.lname.$touched">
-                              <div id="req" ng-message="required">Required</div>
-                            </div>
-                          </md-input-container>
-                          
-                          <md-input-container class="md-block" flex-gt-sm="">
-                            <label>Email</label>
-                            <input name="eid" type="email" ng-model="user.emailId" eid required>
-                            <div md-auto-hide="false" ng-messages="userForm.eid.$error" ng-if="userForm.$submitted || userForm.eid.$touched">
-                              <div id="req" ng-message="required">Required</div>
-                              <div id="inveid" ng-message="eid">Invalid Email ID</div>
-                            </div>
-                          </md-input-container>
-                         
-                          <md-input-container class="md-block" flex-gt-sm="">
-                            <label>Skype ID</label>
-                            <input name="skyid" ng-model="user.skypeId" required>
-                            <div md-auto-hide="false" ng-messages="userForm.skyid.$error" ng-if="userForm.$submitted || userForm.skyid.$touched">
-                              <div id="req" ng-message="required">Required</div>
-                            </div>
-                          </md-input-container>
-                          
-                          <md-input-container class="md-block" flex-gt-sm="">
-                            <label>Phone Number</label>
-                            <input name="phone" ng-model="user.phoneNo" phoneno required>
-                            <div md-auto-hide="false" ng-messages="userForm.phone.$error" ng-if="userForm.phone.$touched || userForm.$submitted">
-                              <div id="req" ng-message="required">Required</div>
-                              <div id="phid" ng-message="phoneno">Invalid Phone Number</div>
-                            </div>
-                          </md-input-container>
-                          <div ng-show="success"><p style="color:#78FA89">Thank you for Registering. An email has been sent to you for verification</p></div>
-                          <md-button type="submit" id="reg" class="md-raised" flex-gt-sm="">Register</md-button>
-                        </form>
-                      </div>
-                    </md-content>
-                  </div>
-                </md-content>
-              </md-tab>
-            </md-tabs>
-          </md-content>
-        </div>
+      <md-card flex="33">
+        <md-content class="md-padding">
+          <span class="md-title">{[{ preReq.heading }]}</span>
+          <hr>
+          <span class="md-subhead"><p>{[{ preReq.description }]}</p></span>
+          <ul>
+            <li ng-repeat="criteria in preReq.list">{[{ criteria }]}</li>
+          </ul>
+        </md-content>
       </md-card>
+      <md-card flex="33">
+        <md-content class="md-padding">
+          <span class="md-title">{[{ tution.heading }]}</span>
+          <hr>
+          <span class="md-subhead"><p>{[{ tution.description }]}</p></span>
+          <ul>
+              <li ng-repeat="criteria in tution.list">{[{ criteria }]}</li>
+            </ul>
+        </md-content>
+      </md-card> 
     </div>
   </div>
+
+  <div class="fjucard" flex="35">
+    <md-card>
+      <div class="fjucardtabs">
+        <md-content>
+          <md-tabs md-dynamic-height="" md-border-bottom="">
+            <md-tab label="Register">
+              <md-content class="md-padding">
+                <div layout="column" ng-cloak="" class="md-inline-form">
+                  <md-content layout-padding="">
+                    <div>
+                      <form method="POST" name="userForm" ng-submit="userForm.$valid && register()" novalidate>
+                        <md-input-container class="md-block" flex-gt-sm="">
+                          <label>First name</label>
+                          <input name="fname" ng-model="user.firstName" required>
+                          <div md-auto-hide="false" ng-messages="userForm.fname.$error" ng-if="userForm.$submitted || userForm.fname.$touched">
+                            <div id="req" ng-message="required">Required</div>
+                          </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex-gt-sm="">
+                          <label>Last Name</label>
+                          <input name="lname" ng-model="user.lastName" required>
+                          <div md-auto-hide="false" ng-messages="userForm.lname.$error" ng-if="userForm.$submitted || userForm.lname.$touched">
+                            <div id="req" ng-message="required">Required</div>
+                          </div>
+                        </md-input-container>
+                        
+                        <md-input-container class="md-block" flex-gt-sm="">
+                          <label>Email</label>
+                          <input name="eid" type="email" ng-model="user.emailId" eid required>
+                          <div md-auto-hide="false" ng-messages="userForm.eid.$error" ng-if="userForm.$submitted || userForm.eid.$touched">
+                            <div id="req" ng-message="required">Required</div>
+                            <div id="inveid" ng-message="eid">Invalid Email ID</div>
+                          </div>
+                        </md-input-container>
+                       
+                        <md-input-container class="md-block" flex-gt-sm="">
+                          <label>Skype ID</label>
+                          <input name="skyid" ng-model="user.skypeId" required>
+                          <div md-auto-hide="false" ng-messages="userForm.skyid.$error" ng-if="userForm.$submitted || userForm.skyid.$touched">
+                            <div id="req" ng-message="required">Required</div>
+                          </div>
+                        </md-input-container>
+                        
+                        <md-input-container class="md-block" flex-gt-sm="">
+                          <label>Phone Number</label>
+                          <input name="phone" ng-model="user.phoneNo" phoneno required>
+                          <div md-auto-hide="false" ng-messages="userForm.phone.$error" ng-if="userForm.phone.$touched || userForm.$submitted">
+                            <div id="req" ng-message="required">Required</div>
+                            <div id="phid" ng-message="phoneno">Invalid Phone Number</div>
+                          </div>
+                        </md-input-container>
+                        <div ng-show="success"><p style="color:#78FA89">Thank you for Registering. An email has been sent to you for verification</p></div>
+                        <md-button type="submit" id="reg" class="md-raised" flex-gt-sm="">Register</md-button>
+                      </form>
+                    </div>
+                  </md-content>
+                </div>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+    </md-card>
+  </div>
+</div>
+
+<script type="text/ng-template" id="dialog0.tmpl.html">
+  <md-dialog ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Information</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Programme for working professionals</h2>
+        <p>
+        Majority of the workforce in IT industry are B Tech graduates. Although it is possible to get a job with a basic engineering degree, it is not sufficient to succeed in this profession. It is important to upgrade your education qualification and technical skills for your career growth or, to have an edge in the highly competitive job market.</p>
+        <p>
+        FJU’s MS programme has been designed to suit the needs of working professionals. You can take the course after working hours. The course is designed by experts to meet the latest and futuristic technological needs required to succeed in IT industry. The practicum projects help you implement your learning so that you are better prepared to implement them at your work as well.
+
+        </p>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+</script>
+
+<script type="text/ng-template" id="dialog1.tmpl.html">
+  <md-dialog ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Information</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Programme for fresh graduates</h2>
+        <p>
+        There are two main choices for fresh B Tech graduates – start working and postpone your dream of a higher education degree or, join a college for higher education and wait for another two years to start working.
+        </p>
+        <p>
+          Well, now you have a third choice. You can choose to continue your job hunt and your higher education at the same time. FJU offers you the flexibility to work on your professional and educational aspirations at the same time without compromising on any one. Pursuing your higher education while looking for a job will not only give you an edge over other fresh graduates, it also prepares you for a speedy career growth once you find a job.
+        </p>
+        <p>
+        The MS Programme at FJU is designed keeping in mind the needs of fresh graduates. Freshers need better skills and knowledge of latest technology to face the stiff competition in the job market. This course gives more importance to practical approach which makes you industry ready. 
+        </p>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+</script>
+
+<script type="text/ng-template" id="dialog2.tmpl.html">
+  <md-dialog ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Information</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Programme for current B Tech students</h2>
+        <p>
+        In this highly competitive era, students are required to be ahead of their peers in terms of technical knowledge and skills. Therefore, they prefer to enroll for Masters programmes while they are in the final year of their graduation. 
+        </p>
+        <p>
+        FJU’s programme allows under grad students to enroll in to its Masters Programme by giving a conditional admission. This course allows the students to have a head start in to their higher education. It also puts them ahead of their peers by giving them advanced technological skills and increased job opportunities.
+        </p>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+</script>
+
+<script type="text/ng-template" id="dialog3.tmpl.html">
+  <md-dialog ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Information</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <i class="material-icons">close</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Programme for stay at home parents or any others who have taken a break from work</h2>
+        <p>
+        You have opted to take a break from work to take care of kids or to give time for your personal life. That does not mean you have to compromise on your career growth. Use your time cleverly to advance your education qualification so that you are better prepared for your second stint at work whenever you feel ready. 
+        </p>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+</script>

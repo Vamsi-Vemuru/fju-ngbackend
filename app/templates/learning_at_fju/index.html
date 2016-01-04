@@ -1,0 +1,14 @@
+<md-whiteframe class="md-whiteframe-5dp" flex-sm="" flex-gt-sm="" flex-gt-md="" layout="row" layout-align="center" ng-cloak>
+	<md-content class="md-padding">
+	    <div><H1 >{[{ title }]}</H1></div>
+	    <hr>
+		<p>{[{ desc }]}</p>
+		<div ng-repeat="subs in list">
+			<h2>{[{ subs.title }]}</h2>
+			<hr>
+			<div ng-repeat="paras in subs.description">
+				 <p align="left" ng-bind-html="paras | renderHTMLCorrectly"></p>
+			</div>
+		</div>
+	</md-content>
+</md-whiteframe>

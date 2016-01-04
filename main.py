@@ -7,13 +7,11 @@ class RegistrationHandler(webapp2.RequestHandler):
         r = json.loads(self.request.body)
 
         message = mail.EmailMessage()
-        message.sender = "vamsi0493@gmail.com"
+        message.sender = "Franklin Jefferson University <vamsi0493@gmail.com>"
         message.to = r['emailId']
+        message.subject = "FJU email verification"
         message.body = """
-					I've invited you to Example.com!
-					To accept this invitation, click the following link,		
-					or copy and paste the URL into your browser's address
-					bar"""
+					This is a Test EMAIL"""
 
         message.send()
         self.response.write(r['emailId'])
