@@ -6,17 +6,22 @@
         <hr>
         <span class="md-subhead">
           <p>{[{ degreeDesc }]}</p>
-          <md-input-container style="margin:0px">
+          <md-card id="sliderCard">
             <div layout="row">
-              <h3 flex="" style="padding-top:6px; margin:0px">Are you</h3>
-              <md-select ng-model="userType" flex="" style="margin-left:10px; margin-top:0px; margin-bottom:0px">
-                <md-option ng-repeat="userType in userTypes" ng-value="userType">{[{ userType.title }]}</md-option>
-              </md-select>
-            </div>         
-          </md-input-container>
-          <div ng-show="userType.title">
-            <p ng-repeat="para in userType.description">{[{ para }]}</p>
-          </div>
+              <a href="" ng-click="slideLeft()">
+                <i class="material-icons navicons">chevron_left</i>
+              </a>
+              <div flex="90">
+                <md-content id="targetUsers" layout-align="center center">
+                  <h1>{[{ userType.title }]}</h1>
+                  <p ng-repeat="para in userType.description">{[{ para }]}</p>
+                </md-content>
+              </div>
+              <a href="" ng-click="slideRight()">
+                <i class="material-icons navicons">chevron_right</i>
+              </a>
+            </div>
+          </md-card>
           <p>{[{ end }]}</p>
         </span>
       </md-content>
@@ -118,7 +123,17 @@
                             <div id="phid" ng-message="phoneno">Invalid Phone Number</div>
                           </div>
                         </md-input-container>
-                        <div ng-show="success"><p style="color:#78FA89">Thank you for Registering. An email has been sent to you for verification</p></div>
+                        <div layout="row" style="background-color:#78FA89" ng-show="success">
+                          <div flex="90">
+                            <p style="color:white">Thank you for Registering. An email has been sent to you for verification</p>
+                          </div>
+                          <div>
+                            <a href="" ng-click="close()">
+                              <i class="material-icons">close</i>
+                            </a>
+                          </div>
+                        </div>
+                        
                         <md-button type="submit" id="reg" class="md-raised" flex-gt-sm="">Register</md-button>
                       </form>
                     </div>

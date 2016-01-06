@@ -1,3 +1,9 @@
+.fjutoolbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 .fjucardtabs md-content {
   background-color: transparent !important;
 }
@@ -61,3 +67,22 @@ md-whiteframe {
   margin-bottom:50px;
 }
 
+i.navicons {
+  font-size:48px;
+  color: black;
+  margin-top: 240px;
+}
+
+button.navbtn {
+  padding:2px;
+  
+}
+
+#sliderCard {
+  height: 500px;
+}
+
+#targetUsers {
+  padding-left: 20px;
+  padding-right: 20px;
+}

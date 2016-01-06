@@ -6,8 +6,10 @@ var landingPageController = angular.module('landingPageController',[])
 landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeout', 'loadJsonService', '$mdDialog',
   function($http, $scope, $timeout, loadJsonService, $mdDialog) {
   $scope.user = {};
-
+  $scope.userType = [];
+  var sliderIndex = 0;
   $scope.showDialogue = function(ev, ind) {
+    
     var templ = 'dialog'+ind+'.tmpl.html';
     $mdDialog.show({
       controller: DialogController,
@@ -27,8 +29,25 @@ landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeou
       $scope.preReq= data.fieldsList[1];
       $scope.tution = data.fieldsList[2];
       $scope.userTypes = data.typeList;
-      $scope.userType = $scope.userTypes[0];
+      $scope.userType = $scope.userTypes[sliderIndex];
   });
+
+  $scope.slideLeft = function() {
+    sliderIndex--;
+    if (sliderIndex < 0) {
+      sliderIndex = $scope.userTypes.length - 1;
+    }
+    $scope.userType = $scope.userTypes[sliderIndex];
+  };
+  $scope.slideRight = function() {
+    sliderIndex++;
+    if (sliderIndex >= $scope.userTypes.length) {
+      sliderIndex = 0;
+    }
+    $scope.userType = $scope.userTypes[sliderIndex];
+  };
+
+
 
 
   $scope.register = function() {
@@ -39,16 +58,15 @@ landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeou
           data    : $scope.user //forms user object
          })
     .success(function(data) {
-      $scope.user = {};
-      $scope.userForm.$setPristine();
-      $scope.userForm.$setUntouched();
       $scope.success = true;
-      $timeout(function () {
-          $scope.success = false;
-      }, 3000);
     })
   };
+
+  $scope.close = function() {
+    $scope.success = false;
+  };
 }]);
+
 
 function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
