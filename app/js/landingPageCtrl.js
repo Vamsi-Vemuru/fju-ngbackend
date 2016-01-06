@@ -26,6 +26,8 @@ landingPageController.controller("landingPageCtrl", ['$http', '$scope', '$timeou
       $scope.courseReq = data.fieldsList[0];
       $scope.preReq= data.fieldsList[1];
       $scope.tution = data.fieldsList[2];
+      $scope.userTypes = data.typeList;
+      $scope.userType = $scope.userTypes[0];
   });
 
 

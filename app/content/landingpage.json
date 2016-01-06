@@ -1,12 +1,6 @@
 {
 	"heading" : "Master of Science in Software Development",
 	"description": "What is holding you back from getting a higher education degree?",
-	"list": [
-			"Are you a busy working professional?",
-			"Are you taking a break from work and hope to get back soon?",
-			"Are you a fresh graduate looking for job opportunities?", 
-			"Are you a college student looking to get a head start on your higher education?"
-			],
 	"end": "Are you worried about the expenses of full-time college education? Whatever your constraint is, FJU helps you realize your dream of gaining higher education degree under the guidance of some of the best faculty in the world. Check out our faculty profile page for more details.",
 	"fieldsList": [
 		{
@@ -31,6 +25,35 @@
 			"heading": "Tuition",
 			"description": "blah blah",
 			"list": []
+		}
+	],
+	"typeList": [
+		{
+			"title": "Choose from below",
+			"description": []
+		},
+		{
+			"title": "a busy working professional?",
+			"description": ["Majority of the workforce in IT industry are B Tech graduates. Although it is possible to get a job with a basic engineering degree, it is not sufficient to succeed in this profession. It is important to upgrade your education qualification and technical skills for your career growth or, to have an edge in the highly competitive job market.",
+											"FJU’s MS programme has been designed to suit the needs of working professionals. You can take the course after working hours. The course is designed by experts to meet the latest and futuristic technological needs required to succeed in IT industry. The practicum projects help you implement your learning so that you are better prepared to implement them at your work as well."
+										]
+		},
+		{
+			"title": "taking a break from work and hope to get back soon?",
+			"description": ["There are two main choices for fresh B Tech graduates – start working and postpone your dream of a higher education degree or, join a college for higher education and wait for another two years to start working.",
+											"Well, now you have a third choice. You can choose to continue your job hunt and your higher education at the same time. FJU offers you the flexibility to work on your professional and educational aspirations at the same time without compromising on any one. Pursuing your higher education while looking for a job will not only give you an edge over other fresh graduates, it also prepares you for a speedy career growth once you find a job.",
+											"The MS Programme at FJU is designed keeping in mind the needs of fresh graduates. Freshers need better skills and knowledge of latest technology to face the stiff competition in the job market. This course gives more importance to practical approach which makes you industry ready."
+										]
+		},
+		{
+			"title": "a fresh graduate looking for job opportunities?",
+			"description": ["In this highly competitive era, students are required to be ahead of their peers in terms of technical knowledge and skills. Therefore, they prefer to enroll for Masters programmes while they are in the final year of their graduation.",
+											"FJU’s programme allows under grad students to enroll in to its Masters Programme by giving a conditional admission. This course allows the students to have a head start in to their higher education. It also puts them ahead of their peers by giving them advanced technological skills and increased job opportunities."
+										]
+		},
+		{
+			"title": "a college student looking to get a head start on your higher education?",
+			"description": ["You have opted to take a break from work to take care of kids or to give time for your personal life. That does not mean you have to compromise on your career growth. Use your time cleverly to advance your education qualification so that you are better prepared for your second stint at work whenever you feel ready."]
 		}
 	]
 }
